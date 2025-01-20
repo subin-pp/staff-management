@@ -11,11 +11,9 @@ const View = ({ staffDetailsPropes, searchTerm }) => {
         const formattedId = String(index + 1).padStart(3, '0'); // Format ID as '001', '002', etc.
         
         return (
-          formattedId.includes(searchTerm) || // Check if ID matches the search term
+          formattedId.includes(searchTerm) ||
           staff.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          staff.phone.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          staff.place.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          String(staff.age).includes(searchTerm) // To handle numeric search, if needed
+          String(staff.age).includes(searchTerm) 
         );
       });
 
@@ -24,7 +22,7 @@ const View = ({ staffDetailsPropes, searchTerm }) => {
     } else {
       console.log("No staff details available.");
     }
-  }, [staffDetailsPropes, searchTerm]); // Re-run whenever staffDetailsPropes or searchTerm changes
+  }, [staffDetailsPropes, searchTerm]); 
 
   return (
     <div className="d-flex justify-content-center" style={{ minHeight: '100vh', paddingBottom: '30px' }}>
@@ -33,7 +31,7 @@ const View = ({ staffDetailsPropes, searchTerm }) => {
         <div className="d-flex flex-wrap justify-content-center mt-4" style={{ gap: '20px' }}>
           {filteredStaffDetails.length > 0 ? (
             filteredStaffDetails.map((staff, index) => {
-              const formattedId = String(index + 1).padStart(3, '0'); // Format ID here too
+              const formattedId = String(index + 1).padStart(3, '0');
 
               return (
                 <div key={index} className="shadow border d-flex flex-column align-items-center" style={{ width: '280px', height: '390px', borderRadius: '20px', textAlign: 'center', padding: '20px' }}>

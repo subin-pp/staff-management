@@ -104,6 +104,7 @@ const Dashboard = ({setStaffDetailsPropes }) => {
       console.log(response);
 
       resetForm();
+      getsStaffDetails()
     } else {
       alert("Please fix the errors in the form.");
     }
